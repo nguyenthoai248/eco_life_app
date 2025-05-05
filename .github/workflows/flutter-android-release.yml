@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build-release:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,7 @@ jobs:
         with:
           flutter-version: '3.29.2'
 
-      - name: Decode keystore from base64
+      - name: Decode keystore
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/release-keystore.jks
 
@@ -35,7 +35,7 @@ jobs:
       - name: Build release APK
         run: flutter build apk --release
 
-      - name: Upload APK to artifacts
+      - name: Upload signed release APK
         uses: actions/upload-artifact@4.6.2
         with:
           name: release-apk
