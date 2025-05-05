@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "558738569106",
+    "project_id": "eco-life-app",
+    "storage_bucket": "eco-life-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558738569106:android:234814c8c49e713cc8b34b",
+        "android_client_info": {
+          "package_name": "com.guitarzone.ecolifeapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiJ9AGtMJ7W-FAhIEZm9w8pnXxH-2ex4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
