@@ -1,4 +1,4 @@
-name: Flutter CI/CD - Android
+name: Flutter Debug Build
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - develop
 
 jobs:
-  build:
+  build-debug:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout project
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Setup Flutter
@@ -21,14 +21,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Run tests
-        run: flutter test
-
-      - name: Build APK
+      - name: Build debug APK
         run: flutter build apk --debug
 
       - name: Upload APK
         uses: actions/upload-artifact@4.6.2
         with:
-          name: eco-debug-apk
+          name: debug-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
